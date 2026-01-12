@@ -1,0 +1,12 @@
+Basic Git Commands Used:
+
+git init – Initialize repository
+git status – Check file status
+git add . – Stage all files
+git commit -m "message" – Save changes
+git log – View commit history
+git branch – View branches
+git checkout – Switch branches
+git merge – Merge branches
+git push – Upload changes to GitHub
+git pull – Download updates from GitHub
