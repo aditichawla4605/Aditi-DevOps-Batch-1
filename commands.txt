@@ -10,3 +10,4 @@ git checkout – Switch branches
 git merge – Merge branches
 git push – Upload changes to GitHub
 git pull – Download updates from GitHub
+git remote -v – Displays the configured remote repositories
