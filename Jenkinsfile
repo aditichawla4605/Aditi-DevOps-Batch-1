@@ -1,9 +1,16 @@
 pipeline {
     agent any
+
     stages {
         stage('Build') {
             steps {
-                echo 'Jenkins pipeline executed successfully'
+                echo 'Compiling application...'
+            }
+        }
+
+        stage('Test') {
+            steps {
+                echo 'Running tests...'
             }
         }
     }
