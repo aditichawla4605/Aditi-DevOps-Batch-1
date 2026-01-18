@@ -4,9 +4,11 @@ pipeline {
     stages {
 
         stage('Build') {
+            agent none
             stages {
 
                 stage('Build Stage') {
+                    agent any
                     steps {
                         echo 'Compiling application...'
                         bat '''
@@ -17,6 +19,7 @@ pipeline {
                 }
 
                 stage('Archive Artifacts') {
+                    agent any
                     steps {
                         echo 'Archiving build artifacts'
                         archiveArtifacts artifacts: 'build/**', fingerprint: true
