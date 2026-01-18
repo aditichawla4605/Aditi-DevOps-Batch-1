@@ -9,15 +9,17 @@ pipeline {
                 stage('Build Stage') {
                     steps {
                         echo 'Compiling application...'
-                        // create a dummy build output
-                        sh 'mkdir -p build && echo "Build output file" > build/output.txt'
+                        bat '''
+                        if not exist build mkdir build
+                        echo Build output file > build\\output.txt
+                        '''
                     }
                 }
 
                 stage('Archive Artifacts') {
                     steps {
                         echo 'Archiving build artifacts'
-                        archiveArtifacts artifacts: 'build/*', fingerprint: true
+                        archiveArtifacts artifacts: 'build/**', fingerprint: true
                     }
                 }
 
@@ -39,7 +41,3 @@ pipeline {
         stage('End') {
             steps {
                 echo 'Pipeline completed'
-            }
-        }
-    }
-}
