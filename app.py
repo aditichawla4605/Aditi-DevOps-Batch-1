@@ -1,1 +1,1 @@
-print("This is a buggy version of the app").
+print("This is a buggy version of the app")
